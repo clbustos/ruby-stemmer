@@ -1,5 +1,9 @@
 if RUBY_PLATFORM =~/(mswin|mingw)/i
-  require "lingua/#{RUBY_VERSION.sub(/\.\d+$/, '')}/stemmer_native"
+  if File.exists? File.join(File.dirname(__FILE__), "stemmer_native.so") 
+    require "lingua/stemmer_native" 
+   else
+    require "lingua/#{RUBY_VERSION.sub(/\.\d+$/, '')}/stemmer_native"
+   end
 else
   require 'lingua/stemmer_native'
 end
