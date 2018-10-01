@@ -32,7 +32,12 @@ if RUBY_PLATFORM =~ /darwin/
 end
 
 # make libstemmer_c. unless we're cross-compiling.
-unless RUBY_PLATFORM =~ /i386-mingw32/
+if RUBY_PLATFORM =~ /i386-mingw32/
+  Dir.chdir(LIBSTEMMER) do 
+    system "#{make} libstemmer.o"
+  end  
+else
+
   system "cd #{LIBSTEMMER}; #{make} libstemmer.o; cd #{ROOT};"
   exit unless $? == 0
 end
