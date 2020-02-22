@@ -1,16 +1,15 @@
 PATH
   remote: .
   specs:
-    ruby-stemmer (1.0.0)
+    ruby-stemmer (2.0.1)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    minitest (5.11.3)
-    rake (12.3.1)
-    rake-compiler (0.9.9)
+    minitest (5.5.1)
+    rake (10.4.2)
+    rake-compiler (0.9.5)
       rake
-    rdoc (4.3.0)
 
 PLATFORMS
   ruby
@@ -19,8 +18,7 @@ PLATFORMS
 DEPENDENCIES
   minitest (~> 5.5)
   rake-compiler (~> 0.9)
-  rdoc (~> 4.2)
   ruby-stemmer!
 
 BUNDLED WITH
-   1.16.5
+   1.17.2
